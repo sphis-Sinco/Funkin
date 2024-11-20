@@ -30,14 +30,20 @@ class ChartEditorMetadataToolbox extends ChartEditorBaseToolbox
   var inputSongName:TextField;
   var inputSongArtist:TextField;
   var inputSongCharter:TextField;
+  var inputSongAlbum:TextField;
+
   var inputStage:DropDown;
   var inputNoteStyle:DropDown;
+
   var buttonCharacterPlayer:Button;
   var buttonCharacterGirlfriend:Button;
   var buttonCharacterOpponent:Button;
+
   var inputBPM:NumberStepper;
+
   var labelScrollSpeed:Label;
   var inputScrollSpeed:Slider;
+
   var frameVariation:Frame;
   var frameDifficulty:Frame;
 
@@ -101,6 +107,20 @@ class ChartEditorMetadataToolbox extends ChartEditorBaseToolbox
       else
       {
         chartEditorState.currentSongMetadata.charter = null;
+      }
+    };
+
+    inputSongAlbum.onChange = function(event:UIEvent) {
+      var valid:Bool = event.target.text != null && event.target.text != '';
+
+      if (valid)
+      {
+        inputSongAlbum.removeClass('invalid-value');
+        chartEditorState.currentSongMetadata.playData.album = event.target.text;
+      }
+      else
+      {
+        chartEditorState.currentSongMetadata.playData.album = null;
       }
     };
 
@@ -194,6 +214,7 @@ class ChartEditorMetadataToolbox extends ChartEditorBaseToolbox
     inputSongName.value = chartEditorState.currentSongMetadata.songName;
     inputSongArtist.value = chartEditorState.currentSongMetadata.artist;
     inputSongCharter.value = chartEditorState.currentSongMetadata.charter;
+    inputSongAlbum.value = chartEditorState.currentSongMetadata.playData.album;
     inputStage.value = chartEditorState.currentSongMetadata.playData.stage;
     inputNoteStyle.value = chartEditorState.currentSongMetadata.playData.noteStyle;
     inputBPM.value = chartEditorState.currentSongMetadata.timeChanges[0].bpm;

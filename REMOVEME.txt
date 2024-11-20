@@ -1,0 +1,5 @@
+REMOVE THIS FILE IF THE PR IS ACCEPTED
+THIS IS TO KEEP TRACK OF CHANGES
+
+- Added "Album" textfield to Charteditor Metadata toolbox
+- Changed Dimensions of Charteditor Metadata toolbox

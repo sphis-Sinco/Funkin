@@ -78,12 +78,16 @@ class SongMetadata implements ICloneable<SongMetadata>
     this.offsets = new SongOffsets();
     this.timeChanges = [new SongTimeChange(0, 100)];
     this.looped = false;
+
     this.playData = new SongPlayData();
+
+    this.playData.album = "volume1";
     this.playData.songVariations = [];
     this.playData.difficulties = [];
     this.playData.characters = new SongCharacterData('bf', 'gf', 'dad');
     this.playData.stage = 'mainStage';
     this.playData.noteStyle = Constants.DEFAULT_NOTE_STYLE;
+
     this.generatedBy = SongRegistry.DEFAULT_GENERATEDBY;
     // Variation ID.
     this.variation = (variation == null) ? Constants.DEFAULT_VARIATION : variation;
