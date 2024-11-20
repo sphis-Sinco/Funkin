@@ -31,6 +31,7 @@ class SongMetadata implements ICloneable<SongMetadata>
   public var artist:String;
 
   @:optional
+  @:default("Unknown")
   public var charter:Null<String> = null;
 
   @:optional
@@ -472,6 +473,7 @@ class SongPlayData implements ICloneable<SongPlayData>
    * The album ID for the album to display in Freeplay.
    * If `null`, display no album.
    */
+  @:default("volume1")
   @:optional
   public var album:Null<String>;
 
